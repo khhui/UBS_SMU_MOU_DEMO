@@ -23,6 +23,10 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
+    - name: Apply database migrations
+      run: |
+        python manage.py migrate
+
     - name: Run tests
       working-directory: ubs_smu_mou_demo
       run: |
